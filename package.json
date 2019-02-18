@@ -8,6 +8,7 @@
   "name": "nextjs-lambda",
   "version": "1.0.0",
   "devDependencies": {
+    "@babel/plugin-transform-object-assign": "^7.2.0",
     "netlify-lambda": "^1.4.2"
   },
   "scripts": {
