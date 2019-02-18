@@ -22,6 +22,12 @@
   force = false
 
 [[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.ico"
+  status = 200
+  force = false
+
+[[redirects]]
   from="/*"
   to="/.netlify/functions/server"
   status = 200
