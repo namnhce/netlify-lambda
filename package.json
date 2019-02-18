@@ -7,12 +7,15 @@
   },
   "name": "nextjs-lambda",
   "version": "1.0.0",
-  "devDependencies": {},
+  "devDependencies": {
+    "netlify-lambda": "^1.4.2"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "install:lambda": "cd functions && yarn install"
+    "install:lambda": "cd functions && yarn install",
+    "build:lambda": "netlify-lambda build functions"
   },
   "author": "",
   "license": "ISC",
