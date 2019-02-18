@@ -4,13 +4,13 @@
   functions = ".functions"
 
 [[redirects]]
-  from = "/"
+  from = "/*"
   to="/.netlify/functions/server"
   status = 200
   force = false
 
-[[redirects]]
-  from="/*"
-  to="/.netlify/functions/server/:splat"
-  status = 200
-  force = false
+# [[redirects]]
+#   from="/*"
+#   to="/.netlify/functions/server/:splat"
+#   status = 200
+#   force = false
