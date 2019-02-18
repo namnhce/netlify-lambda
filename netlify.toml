@@ -1,6 +1,6 @@
 [build]
   command = "yarn build && yarn install:lambda && yarn build:lambda"
-  publish = "public"
+  publish = ".next"
   functions = ".functions"
 
 [[redirects]]
