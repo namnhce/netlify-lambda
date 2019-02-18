@@ -9,7 +9,7 @@ exports.handler = (event, context, callback) => {
 
   const reqUrl = new URL(event.headers.referer)
 
-  console.log(reqUrl.pathname)
+  console.log(reqUrl)
 
   // awsServerlessExpress.proxy(server, event, context, 'CALLBACK', callback)
   awsServerlessExpress.proxy(server, event, context)
