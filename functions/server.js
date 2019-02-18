@@ -5,5 +5,6 @@ const server = awsServerlessExpress.createServer((req, res) => page.render(req, 
 exports.handler = (event, context, callback) => {
   console.dir(event)
 
-  awsServerlessExpress.proxy(server, event, context, 'CALLBACK', callback)
+  // awsServerlessExpress.proxy(server, event, context, 'CALLBACK', callback)
+  awsServerlessExpress.proxy(server, event, context)
 }
