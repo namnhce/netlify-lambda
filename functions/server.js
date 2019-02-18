@@ -4,7 +4,9 @@ const awsServerlessExpress = require('aws-serverless-express')
 
 exports.handler = (event, context, callback) => {
   const reqUrl = url.parse(event.headers.referer || '')
-  console.log(reqUrl.pathname, q.parse(reqUrl.search))
+  const [pathname, queryParams] = [reqUrl.pathname, q.parse(reqUrl.search)]
+
+  console.log({ pathname, queryParams })
 
   const page = require('./.next/serverless/pages/index')
   const server = awsServerlessExpress.createServer((req, res) => page.render(req, res))
