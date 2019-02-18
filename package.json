@@ -16,6 +16,7 @@
     "build": "next build",
     "start": "next start",
     "install:lambda": "cd functions && yarn install",
+    "dev:lambda": "netlify-lambda serve functions",
     "build:lambda": "netlify-lambda build functions"
   },
   "author": "",
