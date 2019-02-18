@@ -1,6 +1,6 @@
 [build]
-  command = "yarn build && cp -R .next functions/.next && yarn install:lambda && yarn build:lambda"
-  publish = ".next"
+  command = "yarn build && mkdir dist && cp -R .next dist/_next && cp -R .next functions/.next && yarn install:lambda && yarn build:lambda"
+  publish = "dist"
   functions = ".functions"
 
 [[redirects]]
