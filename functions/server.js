@@ -3,10 +3,7 @@ const q = require('query-string')
 const awsServerlessExpress = require('aws-serverless-express')
 
 exports.handler = async (event, context, callback) => {
-  console.log(event)
-  console.log(event.headers.referer)
-
-  const reqUrl = url.parse(event.headers.referer)
+  const reqUrl = url.parse(event.headers.referer || '')
   console.log(reqUrl.pathname, q.parse(reqUrl.search))
 
   // awsServerlessExpress.proxy(server, event, context, 'CALLBACK', callback)
