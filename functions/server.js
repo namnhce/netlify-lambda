@@ -1,10 +1,8 @@
 const url = require('url')
 const q = require('query-string')
 const awsServerlessExpress = require('aws-serverless-express')
-const page = require('./.next/serverless/pages/index')
-const server = awsServerlessExpress.createServer((req, res) => page.render(req, res))
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
   console.log(event)
   console.log(event.headers.referer)
 
@@ -12,5 +10,9 @@ exports.handler = (event, context, callback) => {
   console.log(reqUrl.pathname, q.parse(reqUrl.search))
 
   // awsServerlessExpress.proxy(server, event, context, 'CALLBACK', callback)
-  awsServerlessExpress.proxy(server, event, context)
+
+  const page = require('./.next/serverless/pages/index')
+  const server = awsServerlessExpress.createServer((req, res) => page.render(req, res))
+
+  return awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise
 }
