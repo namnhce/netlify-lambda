@@ -1,5 +1,5 @@
 [build]
-  command = "yarn build && yarn install:lambda && yarn build:lambda"
+  command = "yarn build && mv .next functions/ && yarn install:lambda && yarn build:lambda"
   publish = ".next"
   functions = ".functions"
 
