@@ -1,12 +1,7 @@
 [build]
-  command = "yarn build && mkdir dist && cp -R .next dist/.next && cp -R .next functions/.next && yarn install:lambda && yarn build:lambda"
+  command = "yarn build && mkdir dist && cp -R .next dist/_next && cp -R .next functions/.next && yarn install:lambda && yarn build:lambda"
   publish = "dist"
   functions = ".functions"
-
-[[redirects]]
-  from = "/_next/*"
-  to = "/.next/:splat"
-  status = 200
 
 [[redirects]]
   from = "/*"
