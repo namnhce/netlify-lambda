@@ -13,5 +13,4 @@
   from="/*"
   to="/.netlify/functions/server/:splat"
   status = 200
-  headers = {X-From = "Netlify"}
   force = false
