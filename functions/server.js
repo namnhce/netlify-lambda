@@ -10,7 +10,7 @@ exports.handler = (event, context, callback) => {
 
   const indexPage = require('./.next/serverless/pages/index')
   const aboutPage = require('./.next/serverless/pages/about')
-  const server = awsServerlessExpress.createServer((req, res) => page.render(req, res))
+  const server = awsServerlessExpress.createServer((req, res) => console.log(req) || aboutPage.render(req, res))
 
   return awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise
 }
